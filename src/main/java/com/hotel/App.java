@@ -308,7 +308,23 @@ public class App {
      */
     public static void alliberarHabitacio() {
         System.out.println("\n===== ALLIBERAR HABITACIÓ =====");
-         // TODO: Demanar codi, tornar habitació i eliminar reserva
+        int codi = llegirEnter("Introdueix el codi de reserva: ");
+
+        if(!reserves.containsKey(codi)) {
+            System.out.println("\nReserva no trobada!"); 
+            return;
+        }
+
+        ArrayList<String> dades = reserves.get(codi);
+        String tipus = dades.get(0);
+
+        System.out.println("\nReserva trobada!"); 
+
+        disponibilitatHabitacions.put(tipus, disponibilitatHabitacions.get(tipus) + 1);
+        reserves.remove(codi);
+
+        System.out.println("\nHabitació alliberada correctament.");
+        System.out.println("\nDisponibilitat actualitzada.");
     }
 
     /**
