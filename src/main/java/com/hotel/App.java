@@ -127,6 +127,7 @@ public class App {
           obtindreReserva();
           break;
         default:
+          System.out.println("Opció no vàlida");
           break;
       }
     }
