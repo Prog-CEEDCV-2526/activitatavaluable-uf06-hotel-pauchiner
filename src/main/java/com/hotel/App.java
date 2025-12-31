@@ -384,10 +384,6 @@ public class App {
      */
     public static void obtindreReservaPerTipus() {
         System.out.println("\n===== CONSULTAR RESERVES PER TIPUS =====");
-        System.out.println("\nSeleccione tipus:");
-        System.out.println("1. " + TIPUS_ESTANDARD);
-        System.out.println("2. " + TIPUS_SUITE);
-        System.out.println("3. " + TIPUS_DELUXE);
 
         String tipus = seleccionarTipusHabitacio();
 
@@ -413,6 +409,7 @@ public class App {
         ArrayList<String> dades = reserves.get(codi);
 
         System.out.println("\nDades de la reserva:");
+        System.out.println("- Codi de reserva: " + codi);
         System.out.println("- Tipus d'habitació: " + dades.get(0));
         System.out.println("- Cost total: " + dades.get(1) + "€");
 
