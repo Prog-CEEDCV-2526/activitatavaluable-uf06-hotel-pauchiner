@@ -217,13 +217,23 @@ public class App {
                 continue;
             }
 
-            String servei = switch (tipus) {
-                case 1 -> SERVEI_ESMORZAR;
-                case 2 -> SERVEI_GIMNAS;
-                case 3 -> SERVEI_SPA;
-                case 4 -> SERVEI_PISCINA;
-                default -> null;
-            };
+            String servei;
+            switch (tipus) {
+                case 1:
+                    servei = SERVEI_ESMORZAR;
+                    break;
+                case 2:
+                    servei = SERVEI_GIMNAS;
+                    break;
+                case 3:
+                    servei = SERVEI_SPA;
+                    break;
+                case 4:
+                    servei = SERVEI_PISCINA;
+                    break;
+                default:
+                    servei = null;
+            }
 
             resultat.add(servei);
             System.out.println("Servei afegit: " + servei);
