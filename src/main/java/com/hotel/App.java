@@ -144,6 +144,17 @@ public class App {
         float total = calcularPreuTotal(tipus, serveis);
         int codi = generarCodiReserva();
 
+        disponibilitatHabitacions.put(tipus, disponibilitatHabitacions.get(tipus) - 1);
+
+        ArrayList<String> dades = new ArrayList<>();
+        dades.add(tipus);
+        dades.add(String.valueOf(total));
+
+        for (String s : serveis) {
+            dades.add(s);
+        }
+        reserves.put(codi, dades);
+
         System.out.println("\nTOTAL: " + total + "€");
         System.out.println("\nReserva creada amb èxit!");
         System.out.println("\nCodi de reserva: " + codi);
